@@ -5,6 +5,7 @@ import PokemonsNames from './pages/PokemonsNames';
 import CssBaseline from '@mui/material/CssBaseline'
 import PokemonDetails from './pages/PokemonDetails';
 import WeakerAndStronger from './pages/WeakerAndStronger.js';
+import Fight from './pages/Fight';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route index element={<PokemonsNames />} />
         <Route path='pokemondetails/:pokemonName' element={<PokemonDetails />} />
         <Route path='weakerandstronger/:typeName' element={<WeakerAndStronger />} />
+        <Route path='fight' element={<Fight />} />
     </Route>
  </Routes>
  </>

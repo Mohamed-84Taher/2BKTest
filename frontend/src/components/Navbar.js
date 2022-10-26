@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -50,12 +51,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+const pages=[{name:"Pokemons",path:'/'},{name:"Fight",path:'/fight'}]
 
 export default function SearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar position="sticky" >
+        <Toolbar sx={{display:"flex",justifyContent:"space-between"}} >
           <IconButton
             size="large"
             edge="start"
@@ -65,14 +67,23 @@ export default function SearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
+       <Box sx={{display:"flex",gap:"30px"}}>
+        {
+          pages.map(page=>
+            <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            key={page.name}
           >
-            MUI
+          <Link to={page.path} style={{color:"white",textDecoration:"none"}} >
+             {page.name}
+             </Link>
           </Typography>
+            )
+        }
+       </Box>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

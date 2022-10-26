@@ -30,7 +30,7 @@ function WeakerAndStronger() {
   },[typeName])
 
   return (
-    <Container sx={{flexGrow:1,display:"flex",justifyContent:"space-between"}}>
+    <Container sx={{flexGrow:1,display:"flex",justifyContent:"space-between",marginTop:"30px"}}>
       <Box>
 <Typography variant='h5'>List of pokemons weak than the type : {typeName}</Typography>
 {
@@ -40,7 +40,10 @@ function WeakerAndStronger() {
       <Box>
       <Typography variant='h5'>List of pokemons strong than the type : {typeName}</Typography>
       {
-  stronger.map(element=><Typography variant='body2'>{element.name}</Typography>)
+  stronger.map(element=>
+  <Typography variant='body2'>
+    {element.name}
+  </Typography>)
 }
       </Box>
     </Container>
