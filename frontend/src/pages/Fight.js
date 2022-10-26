@@ -82,9 +82,11 @@ const fight=async()=>{
     >
     Fight
     </Button>
-    <Typography variant='h3'>
-        Result : {result}
-    </Typography>
+   {
+    result &&  <Typography variant='h3'>
+    Result : {result}
+</Typography>
+   }
     </Container>
   )
 }

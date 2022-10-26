@@ -41,7 +41,7 @@ function WeakerAndStronger() {
       <Typography variant='h5'>List of pokemons strong than the type : {typeName}</Typography>
       {
   stronger.map(element=>
-  <Typography variant='body2'>
+  <Typography variant='body2' key={element.id}>
     {element.name}
   </Typography>)
 }
